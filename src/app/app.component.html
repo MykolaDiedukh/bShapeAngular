@@ -324,7 +324,7 @@
 <!--   LOGIN -->
 
 
-<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginTitle"
+<div [formGroup]="LoginUser" class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginTitle"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -337,12 +337,12 @@
 
       <div class="modal-body">
         <div class="col">
-          <div class="input-group mb-3 input-group-lg">
+          <div  class="input-group mb-3 input-group-lg">
             <div class="input-group-prepend">
                             <span class="input-group-text" id="loginUserName"><i
                               class="far fa-envelope fa-sm"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+            <input formControlName="username" type="text" class="form-control" placeholder="Email" aria-label="Email"
                    aria-describedby="loginUserName">
           </div>
         </div>
@@ -352,7 +352,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="loginPassword"><i class="fas fa-lock fa-sm"></i></span>
             </div>
-            <input type="password" class="form-control" placeholder="Enter password"
+            <input formControlName="password" type="password" class="form-control" placeholder="Enter password"
                    data-toggle="password"
                    aria-describedby="loginPassword">
             <div class="input-group-append">
@@ -366,7 +366,7 @@
       <div class="col">
         <div class="modal-footer">
           <button type="button" class="btn closebutton btn-lg" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-features-login  btn-lg">Log in</button>
+          <button (click)="LoginUser(login)" type="button" class="btn btn-features-login  btn-lg">Log in</button>
         </div>
       </div>
 
