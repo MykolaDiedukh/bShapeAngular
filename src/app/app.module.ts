@@ -5,14 +5,20 @@ import {AppComponent} from './app.component';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faFilm} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {ReactiveFormsModule, FormsModule} from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-  ],
+    imports: [
+        BrowserModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

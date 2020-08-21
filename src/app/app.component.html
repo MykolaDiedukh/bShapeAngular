@@ -324,7 +324,7 @@
 <!--   LOGIN -->
 
 
-<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginTitle"
+<div [formGroup]="loginForm" class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginTitle"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -337,12 +337,12 @@
 
       <div class="modal-body">
         <div class="col">
-          <div class="input-group mb-3 input-group-lg">
+          <div  class="input-group mb-3 input-group-lg">
             <div class="input-group-prepend">
                             <span class="input-group-text" id="loginUserName"><i
                               class="far fa-envelope fa-sm"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+            <input formControlName="username" type="text" class="form-control" placeholder="Email" aria-label="Email"
                    aria-describedby="loginUserName">
           </div>
         </div>
@@ -352,7 +352,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="loginPassword"><i class="fas fa-lock fa-sm"></i></span>
             </div>
-            <input type="password" class="form-control" placeholder="Enter password"
+            <input formControlName="password" type="password" class="form-control" placeholder="Enter password"
                    data-toggle="password"
                    aria-describedby="loginPassword">
             <div class="input-group-append">
@@ -366,7 +366,7 @@
       <div class="col">
         <div class="modal-footer">
           <button type="button" class="btn closebutton btn-lg" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-features-login  btn-lg">Log in</button>
+          <button (click)="LoginUser(loginForm.value)" type="button" class="btn btn-features-login  btn-lg">Log in</button>
         </div>
       </div>
 
@@ -376,9 +376,9 @@
 
 
 <!--  REGISTRATION-->
-<!--<form (ngSubmit)="onSubmit()" #userRegistration="ngRegistration">-->
+
 <form>
-  <div class="modal fade" id="modalRegistration" tabindex="-1" role="dialog" aria-labelledby="modalRegistrationTitle"
+  <div [formGroup]="registerForm" class="modal fade" id="modalRegistration" tabindex="-1" role="dialog" aria-labelledby="modalRegistrationTitle"
        aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered " role="document">
 
@@ -401,7 +401,7 @@
               </div>
 <!--              <input type="text" [(ngModel)]="user.firstName"] class="form-control" placeholder="First name" aria-label="FirstName"-->
 <!--                     aria-describedby="regFirstName" #firstName="ngModel">              -->
-              <input type="text" class="form-control" placeholder="First name" aria-label="FirstName"
+              <input formControlName="firstName" type="text" class="form-control" placeholder="First name" aria-label="FirstName"
                      aria-describedby="regFirstName">
             </div>
           </div>
@@ -415,7 +415,7 @@
               </div>
 <!--              <input type="text" [(ngModel)]="user.lastName"] class="form-control" placeholder="Last name" aria-label="LastName"-->
 <!--                     aria-describedby="regLastName" required #lastName="ngModel">-->
-              <input type="text" class="form-control" placeholder="Last name" aria-label="LastName"
+              <input formControlName="lastName" type="text" class="form-control" placeholder="Last name" aria-label="LastName"
                      aria-describedby="regLastName" required>
             </div>
           </div>
@@ -426,13 +426,11 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="regEmail"><i class="far fa-envelope fa-sm"></i></span>
               </div>
-<!--              <input type="text" [(ngModel)]="user.email"] class="form-control" placeholder="Email" aria-label="Email"-->
-<!--                     aria-describedby="regEmail" required #email="ngModel">    -->
-              <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+
+              <input formControlName="email" type="text" class="form-control" placeholder="Email" aria-label="Email"
                      aria-describedby="regEmail" required >
             </div>
           </div>
-<!--          <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>-->
 
           <div class="col">
             <div class="input-group mb-3 input-group-lg">
@@ -440,25 +438,23 @@
                 <label class="input-group-text" for="inputGroupSelect01"><i
                   class="fas fa-restroom fa-xs"></i></label>
               </div>
-<!--              <select [(ngModel)]="user.sex"] class="custom-select" id="inputGroupSelect01" #sex="ngModel">-->
-              <select class="custom-select" id="inputGroupSelect01" >
+
+              <select formControlName="sex" class="custom-select" id="inputGroupSelect01" >
                 <option value="1">Male</option>
                 <option value="2">Female</option>
                 <option value="3">It</option>
               </select>
             </div>
           </div>
-<!--          <div [hidden]="!sex.pristine" class="alert alert-danger">Sex is required</div>-->
+
 
           <div class="col">
             <div class="input-group mb-3 input-group-lg">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="regPassword"><i class="fas fa-lock fa-sm"></i></span>
               </div>
-<!--              <input type="password" [(ngModel)]="user.password"] class="form-control" placeholder="Enter password"-->
-<!--                     data-toggle="password"-->
-<!--                     aria-describedby="regPassword" #password="ngModel">        -->
-              <input type="password" class="form-control" placeholder="Enter password"
+
+              <input formControlName="password" type="password" class="form-control" placeholder="Enter password"
                      data-toggle="password"
                      aria-describedby="regPassword">
               <div class="input-group-append">
@@ -466,7 +462,6 @@
               </div>
             </div>
           </div>
-<!--          <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>-->
 
           <div class="col">
             <div class="input-group mb-3 input-group-lg">
@@ -474,7 +469,7 @@
                             <span class="input-group-text" id="regPasswordRapid"><i
                               class="fas fa-lock fa-sm"></i></span>
               </div>
-              <input type="password" class="form-control" placeholder="Repeat password"
+              <input formControlName="submitPassword" type="password" class="form-control" placeholder="Repeat password"
                      data-toggle="password"
                      aria-describedby="regPasswordRapid">
               <div class="input-group-append">
@@ -482,14 +477,15 @@
               </div>
             </div>
           </div>
-
+          <p *ngFor="let error of errors">
+            <span *ngIf="error.show">{{error.description}}</span>
+          </p>
         </div>
 
         <div class="col">
           <div class="modal-footer">
             <button type="button" class="btn closebutton btn-lg" data-dismiss="modal">Close</button>
-<!--            <button type="button" [disabled]="!userRegistration.form.valid" class="btn btn-features-register btn-lg">Save changes</button>-->
-            <button type="button" class="btn btn-features-register btn-lg">Save changes</button>
+            <button (click)="RegisterUser(registerForm.value)" type="button" class="btn btn-features-register btn-lg">Save changes</button>
           </div>
         </div>
 
