@@ -826,7 +826,7 @@ div .movemedown{
 
 /*--- Team Light Background Image --*/
 .fixed-light {
-  background-image: url('assets/img/BGIMAGE/men-1245982_1920-HD.jpg');
+  background-image: url('src/app/assets/img/BGIMAGE/men-1245982_1920-HD.jpg');
   position: fixed;
   height: 100%;
   width: 100%;
