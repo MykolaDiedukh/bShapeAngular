@@ -98,7 +98,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./src/app/assets/js/jsPlugins/plugins.js",
+              "./src/app/assets/js/jsPassword/bootstrap-show-password.js"
+            ]
           }
         },
         "lint": {
