@@ -7,11 +7,13 @@ import {faFilm} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { JQueryScriptsComponent } from './jquery-scripts/jquery-scripts.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JQueryScriptsComponent
   ],
     imports: [
         BrowserModule,

@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*============= ukrycie navbara działa póki co na chromie
+https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll
+=============*/
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+
+/*============= RESETS =============*/
+
+/*-- cholerne iPhone z okrągłymi ekranami poprawa wyświetlenia --*/
+html {
+  padding: env(safe-area-inset);
+}
+
+/*-- Prevent Horizontal Scrolling & Font Style --*/
+
+
+html, body, footer, main {
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif; /* nasz font z googla możemy dodać */
+  color: #505962; /*zmienić kolor elementów podzielić część na body a część na mian itp żeby był rozdzielny color*/
+  scrollbar-width: none;
+}
+
