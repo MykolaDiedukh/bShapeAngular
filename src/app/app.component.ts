@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpClient}  from '@angular/common/http'
 import * as $ from 'jquery';
-import * as lightbox from 'lightbox2'
+/*import * as lightbox from 'lightbox2'*/
 
 @Component({
   selector: 'app-root',
@@ -22,10 +22,10 @@ export class AppComponent {
   loginForm = new FormGroup({username: new FormControl(), password: new FormControl()}) // grupa formularza Form Control tworzy pola w formularzu.
   LoginUser = (form) => {
     console.log(form)
-    // this.http.get("/adrresAPI")
-    //   .subscribe((response)=>{
-    //     // robie cos z responsem z bazy danych
-    //   })
+     this.http.get("http://localhost:8092/user/login")
+       .subscribe((response)=>{
+
+       })
   }
 
   registerForm = new FormGroup({
@@ -54,7 +54,12 @@ export class AppComponent {
   }
 
   public ngOnInit() {
+
+      // @ts-ignore
+    document.getElementById('bgvid').play();
+
     // @ts-ignore
+
     !function ($) {
 //eyeOpenClass: 'fa-eye',
 //eyeCloseClass: 'fa-eye-slash',
