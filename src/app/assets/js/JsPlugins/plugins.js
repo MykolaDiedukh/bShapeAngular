@@ -133,7 +133,7 @@ $(document).ready(function () {
 });
 
 
-
+//
 /*========== WAYPOINTS ANIMATION DELAY ==========*/
 //Original Resource: https://www.oxygenna.com/tutorials/scroll-animations-using-waypoints-js-animate-css
 $(function () { // a self calling function

@@ -26,3 +26,7 @@ html, body, footer, main {
   scrollbar-width: none;
 }
 
+
+.lightbox {
+  display: none !important;
+}
