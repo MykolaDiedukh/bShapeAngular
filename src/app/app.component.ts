@@ -21,7 +21,7 @@ export class AppComponent {
   loginForm = new FormGroup({username: new FormControl(), password: new FormControl()}) // grupa formularza Form Control tworzy pola w formularzu.
   LoginUser = (form) => {
     console.log(form)
-     this.http.get("http://localhost:8092/user/login")
+     this.http.post("http://localhost:8092/user/login",form)
        .subscribe((response)=>{
 
        })
