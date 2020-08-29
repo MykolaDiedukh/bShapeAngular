@@ -8,12 +8,14 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 import { JQueryScriptsComponent } from './jquery-scripts/jquery-scripts.component';
+import { UserScheduleComponent } from './user-schedule/user-schedule.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    JQueryScriptsComponent
+    JQueryScriptsComponent,
+    UserScheduleComponent
   ],
     imports: [
         BrowserModule,
